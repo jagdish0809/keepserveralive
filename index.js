@@ -56,11 +56,13 @@ app.listen(PORT, () => {
 cron.schedule("* * * * *", async () => {
   try {
     // Make the GET requests
-    const mbuyResponse = await axios.get("http://localhost:3000/make-request");
+    const mbuyResponse = await axios.get(
+      "https://ill-ruby-bee-veil.cyclic.app/make-request"
+    );
     console.log("GET request to mbuy made:", mbuyResponse.data);
 
     const cruffinResponse = await axios.get(
-      "http://localhost:3000/make-request"
+      "https://ill-ruby-bee-veil.cyclic.app/make-request"
     );
     console.log("GET request to cruffin made:", cruffinResponse.data);
   } catch (error) {
